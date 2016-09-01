@@ -1,19 +1,19 @@
-# Monitor Connection
+# 连接显示器
 
-For regular use, you'll want to plug the Raspberry Pi in to a visual display: a monitor or a TV.
+通常情况下，你想把树莓派连接到一个可视化设备：显示器或电视
 
-## HDMI Port
+## HDMI端口
 
-The Raspberry Pi has a HDMI port which you can plug directly into a monitor or TV with an HDMI cable. This is the easiest solution; some modern monitors and TVs have HDMI ports, and some do not, but there are other options:
+树莓派提供了一个HDMI接口，你可以用HDMI线缆直接连接到显示器或TV。这是最新的解决方案，当前的大部分显示器或TV都支持HDMI接口。如果没有，你可以有其它选择：
 
-### DVI
+### DVI端口
 
-For monitors with a DVI port, you can use an HDMI-to-DVI cable.
+带DVI接口的显示器，你需要一根HDMI转DVI线缆。
 
-### VGA
+### VGA端口
 
-For monitors with VGA only, you can use an HDMI-to-VGA adapter. We suggest using only powered HDMI-to-VGA adapters (with an external power source). Using an unpowered adapter may damage your Pi and therefore is not advised.
+只有VGA接口的显示器，你需要使用HDMI转VGA适配器。我们建议使用带外接电源的适配器。不带电源的适配器可能损坏你的树莓派。
 
-## Composite Port
+## 复合端口
 
-For analogue TVs you can use a standard RCA composite video lead. The B+ and Pi 2 Model B do not have the large composite port, but can still be used with an analogue TV by plugging in to the 3.5mm socket that is also used for audio: you'll need a 3.5mm composite video/audio lead. 
+对于模拟电视，你可以使用标准的RCA复合视频线。Pi B+ 和 Pi 2B 不具备大型复合端口，你需要一根3.5mm的音视频复合线插入到3.5mm端口来连接模拟电视。
