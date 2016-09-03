@@ -43,3 +43,6 @@
 
 
 基于https://github.com/raspberrypi/documentation
+
+
+注：[其他软件](software/README.md)的使用

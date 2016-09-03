@@ -1,22 +1,22 @@
-# Configuration
+# 配置
 
-Some basic guides to configuring your Raspberry Pi.
+一些基本的教程来配置你的树莓派
 
-## Contents
+## 目录
 
 - [raspi-config](raspi-config.md)
-    - The Raspberry Pi configuration tool in Raspbian, allowing you to easily enable features such as the camera, and change your specific settings such as keyboard layout.
+    - Raspbian系统中的树莓派配置工具，可以轻松的开启摄像头或改变键盘的布局。
 - [config.txt](config-txt.md)
-    - The Raspberry Pi configuration file.
-- [Wireless](wireless/README.md)
-    - Configuring your Pi to connect to a wireless network using a wireless dongle.
-- [Audio Config](audio-config.md)
-    - Switch your audio output between HDMI and the 3.5mm jack.
-- [Camera Config](camera.md)
-    - Installing and setting up the Raspberry Pi camera board.
-- [Localisation](localisation.md)
-    - Setting up your Pi to work in your local language/timezone.
-- [Default pin configuration](pin-configuration.md)
-    - Changing the default pin states.
+    - 树莓派配置文件
+- [无线设置](wireless/README.md)
+    - 使用无线网卡让你的树莓派连接到网络
+- [声音设置](audio-config.md)
+    - 在HDMI与3.5mm接口之间切换音频。
+- [相机设置](camera.md)
+    - 安装与配置树莓派的摄像机模块。
+- [本地化](localisation.md)
+    - 设置树莓派的本地化语言、时区等。
+- [引脚设置](pin-configuration.md)
+    - 改引脚的默认状态。
 - [Device Trees Config](device-tree.md)
     - Device Trees, overlays and parameters.
