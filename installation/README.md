@@ -1,11 +1,11 @@
 # Installation
 
-Some simple guides to setting up the software on your Raspberry Pi.
+这是一篇如何安装系统到树莓派的简单向导
 
-Beginners should start with [NOOBS](noobs.md), which gives the user a choice of operating system from the standard distributions. The recommended distribution for normal use is Raspbian. Alternatives are available, such as LibreELEC (Kodi media centre) or Arch Linux.
+初学者建议使用 [NOOBS](noobs.md), 从标准发行版中给用户一个选择。 普通用户推荐Raspbian系统. 还有其他的可用的操作系统，比如： LibreELEC (Kodi media centre) 或者 Arch Linux.
 
-## Contents
+## 目录
 
 - [NOOBS](noobs.md)
-- [Installing images](installing-images/README.md)
-- [SD Cards](sd-cards.md)
+- [安装镜像](installing-images/README.md)
+- [SD卡](sd-cards.md)
