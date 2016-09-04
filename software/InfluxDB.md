@@ -33,3 +33,8 @@
     sudo systemctl start influxdb
     ```
     到此就安装完成了
+
+3. 开机自启动
+    ```
+    sudo systemctl enable influxdb
+    ```
