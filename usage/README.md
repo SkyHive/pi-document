@@ -1,41 +1,41 @@
-# Usage
+# 使用
 
-Basic examples to help you get started with some of the software available in Raspbian
+Rasobian系统中一些可用软件的基本使用示例来帮助你入门
 
-## Contents
+## 目录
 
 - [Scratch](scratch/README.md)
-    - Scratch is a visual programming tool allowing the user to create animations and games with a drag-and-drop interface
+    - Scratch 是一款可视化的软件工具，它可以允许用户通过拖拽的方式创建动画和游戏。
 - [Python](python/README.md)
-    - Python is a general purpose programming language that is easy to pick up and also very powerful
+    - Python 是一款非常容易上手的通用的编程语言，同时它也非常强大。
 - [Sonic Pi](sonic-pi/README.md)
-    - Write code to make music with Sonic Pi
+    - 使用 Sonic Pi 通过代码来制作音乐
 - [Terminal](terminal/README.md)
-    - The Linux terminal is a powerful tool for getting around the filesystem and issuing commands
+    - Linux 终端是一款强大的工具，可以用它来浏览文件系统以及运行命令
 - [GPIO: Raspberry Pi Models A and B](gpio/README.md)
-    - The General Purpose Input/Output pins allow you to control and interact with the real world from Python, Scratch or other programming environments
-- [GPIO: Models A+, B+, Raspberry Pi 2 B and Raspberry Pi 3 B](gpio-plus-and-raspi2/README.md)
-    - The General Purpose Input/Output pins allow you to control and interact with the real world from Python, Scratch or other programming environments
+    - 通用的输入输出引脚允许你通过Python，Scratch或者其他编程环境与真实世界控制和互动。
+- [GPIO: Models A+, B+, Raspberry Pi 2 B 和 Raspberry Pi 3 B](gpio-plus-and-raspi2/README.md)
+    - 通用的输入输出引脚允许你通过Python，Scratch或者其他编程环境与真实世界控制和互动。
 - [Minecraft](minecraft/README.md)
-    - A free version of Minecraft is available for the Pi, and this is the only edition that has a programming interface, meaning you can control Minecraft with Python code - and even interact with the real world through GPIO
+    - Minecraft 是一个树莓派的免费版本, 只有这个版本有可编程接口，意味着你可以通过Python控制Minecraft ，甚至通过 GPIO 跟真实的世界互动。
 - [Python Games](python-games/README.md)
-    - Raspbian ships with some ready made Python games for you to play on your Raspberry Pi - and why not browse the code, hack the games and learn to make your own?
+    - Raspbian 内置一些编译好的 Python 游戏， 你可以在树莓派上玩 - 为什么不看看游戏的代码，破解游戏，然后编一个自己的游戏呢?
 - [WordPress](wordpress/README.md)
-    - Set up a web server on your Raspberry Pi and install Wordpress, a content management and blogging system
+    - 在你的树莓派上搭建一个web服务器，然后安装 可管理的博客系统-Wordpress,
 - [Mathematica](mathematica/README.md)
-    - Mathematica is an industry leading computational platform - available for free on Raspberry Pi
-- [Camera Module](camera/README.md)
-    - The Raspberry Pi camera module is capable of taking full HD 1080p photo and video and can be controlled programmatically
-    - Libraries are available for:
-        - [Bash](camera/raspicam/README.md) (Linux command line)
+    - Mathematica 行业领先的计算平台，在树莓派上是免费的。
+- [相机模块](camera/README.md)
+    - 树莓派相机模块可以通过程序捕捉1080p高清照片和视频
+    - 需要的程序库:
+        - [Bash](camera/raspicam/README.md) (Linux 命令行)
         - [Python](camera/python/README.md)
 - [Webcams](webcams/README.md)
-    - Using a standard USB webcam instead of the Raspberry Pi camera module
+    - 使用一个USB摄像头而不是树莓派相机模块
 - [Kodi](kodi/README.md)
-    - Installing media centre software on your Raspberry Pi
+    - 在你的树莓派上安装多媒体中心的软件
 - [Playing audio](audio/README.md)
-    - Playing audio on your Raspberry Pi
+    - 在你的树莓派上播放音频
 - [Playing video](video/README.md)
-    - Playing video on your Raspberry Pi
-- [Demo programs](demos/README.md)
-    - A selection of examples to demonstrate the Pi's capabilities
+    - 在你的树莓派上播放视频
+- [示例代码](demos/README.md)
+    - 一些示例来验证树莓派的性能

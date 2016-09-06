@@ -1,17 +1,17 @@
-# Formatting an SDXC card for use with NOOBS
+# 为NOOBS格式化SDXC卡
 
-According to the [SD specifications](https://www.sdcard.org/developers/overview/capacity/), any SD card larger than 32GB is an SDXC card and has to be formatted with the exFAT filesystem. This means the official SD Formatter tool will *always* format cards that are 64GB or larger as exFAT.
+根据[SD specifications](https://www.sdcard.org/developers/overview/capacity/), 中的描述，任何大于32G容量的SD卡都叫SDXC，它们必须格式化为exFAT文件系统。这意味着官方的SD卡格式化工具总是使用exFAT来格式化大于等于64GB的卡。
 
-The Raspberry Pi's bootloader, built into the GPU and non-updateable, only has support for reading from FAT filesystems (both FAT16 and FAT32), and is unable to boot from an exFAT filesystem. So if you want to use NOOBS on a card that is 64GB or larger, you need to reformat it as FAT32 first before copying the NOOBS files to it.
+树莓派的bootloader（在GPU中，并且不能更改）仅支持读取FAT（FAT16 与 FAT32）文件系统，所以不能从exFAT启动。如果你准备使用一张大于等于64GB的卡来安装NOOBS，那么你需要先把SDXC卡格式化为FAT32，然后再拷贝NOOBS。
 
-## Linux and Mac OS
+## Linux 和 Mac OS
 
-The standard formatting tools built into these operating systems are able to create FAT32 partitions; they might also be labelled as FAT or MS-DOS. Simply delete the existing exFAT partition and create and format a new FAT32 primary partition, before proceeding with the rest of the [NOOBS instructions](noobs.md).
+系统自带的标准格式化工具支持创建FAT32分区（可能会显示为 FAT 或 MS-DOS）。在执行 [NOOBS instructions](noobs.md)的剩余步骤前，请先删除SDXC卡上已存在的exFAT分区，然后创建一个新的FAT32主分区。
 
 ## Windows
 
-The standard formatting tools built into Windows are limited, as they only allow partitions up to 32GB to be formatted as FAT32, so to format a 64GB partition as FAT32 you need to use a third-party formatting tool. A simple tool to do this is [FAT32 Format](http://www.ridgecrop.demon.co.uk/guiformat.htm) which downloads as a single file named `guiformat.exe` - no installation is necessary.
+Windows内建的标准格式化工具只运行最大32GB的FAT32分区。为了格式化64GB大小的FAT32分区，你需要使用第三方格式化工具。 [FAT32 Format](http://www.ridgecrop.demon.co.uk/guiformat.htm) 是一个简单的格式化工具，下载之后得到一个单文件`guiformat.exe`，无需安装即可使用。
 
-Run the [SD Formatter](https://www.sdcard.org/downloads/formatter_4/) tool first with "FORMAT SIZE ADJUSTMENT" set to "ON", to ensure that any other partitions on the SD card are deleted. Then run the FAT32 Format (guiformat.exe) tool, ensure you choose the correct drive letter, leave the other options at their default settings, and click "Start". After it has finished, you can proceed with the rest of the [NOOBS instructions](noobs.md).
+首先启动[SD Formatter](https://www.sdcard.org/downloads/formatter_4/) 设置"FORMAT SIZE ADJUSTMENT" 为 "ON" 来删除SD卡上的所有分区。然后运行 guiformat.exe，选择正确的驱动盘符，其它选项保持默认即可，点击 Start 开始格式化。等待格式化完成，之后你可以继续[NOOBS instructions](noobs.md)的剩余步骤。
 
-If the FAT32 Format tool doesn't work for you, alternative options are [MiniTool Partition Wizard Free Edition](http://www.minitool.com/partition-manager/partition-wizard-home.html) and [EaseUS Partition Master Free](http://www.easeus.com/partition-manager/epm-free.html) which are "home user" versions of fully featured partition editor tools, and so not as straightforward to use.
+如何 guiformat.exe 不能正确完成工作，你还可以选择 [MiniTool Partition Wizard Free Edition](http://www.minitool.com/partition-manager/partition-wizard-home.html) 和 [EaseUS Partition Master Free](http://www.easeus.com/partition-manager/epm-free.html)，它们是专业的全功能分区软件，意味着上手难度比较高。

@@ -1,27 +1,27 @@
-# SD cards
+# SD 卡
 
-The Raspberry Pi should work with any compatible SD card, although there are some guidelines that should be followed:
+树莓派能与兼容的SD卡工作，但这里一些需要遵循的准则:
 
-##SD card size (capacity). 
+##SD 卡大小 (容量).
 
-For installation of NOOBS, the minimum recommended card size is 8GB. For image installations we recommend a minimum of 4GB. some distributions, specifically LibreELEC and Arch, can run on much smaller cards.
+安装NOOBS最少需要8GB，其它镜像建议最小4GB；一些操作系统可以工作在更小的卡上，例如 OpenElec 和 Arch。
 
-##SD card class. 
+##SD 卡种类.
 
-The card class determines the sustained write speed for the card; a class 4 card will be able to write at 4MB/s, whereas a class 10 should be able to attain 10 MB/s. However, it should be noted that this does not mean a class 10 card will outperform a class 4 card for general usage, because often this write speed is achieved at the cost of read speed and increased seek times.
+SD卡的class。class决定了SD卡的写入速度；class 4 写入速度可以达到 4MB/s，而 class 10 可以达到 10MB/s。但这并不意味着class 10在任何情况下都比 class 4优秀，因为写入速度的提升通常以牺牲读取速度和寻道时间为代价。
 
-##SD card physical size. 
+##SD 卡尺寸.
 
-The original [Raspberry Pi Model A](https://www.raspberrypi.org/products/model-a/) and [Raspberry Pi Model B](https://www.raspberrypi.org/products/model-b/) require full-size SD cards. The newer [Raspberry Pi Model A+](https://www.raspberrypi.org/products/model-a-plus/), [Raspberry Pi Model B+](https://www.raspberrypi.org/products/model-b-plus/), [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/), [Raspberry Pi Zero](https://www.raspberrypi.org/products/pi-zero/), and [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) require micro SD cards.
+最初的 [Raspberry Pi Model A](https://www.raspberrypi.org/products/model-a/) 和 [Raspberry Pi Model B](https://www.raspberrypi.org/products/model-b/)需要全尺寸SD 卡. 新版的 [Raspberry Pi Model A+](https://www.raspberrypi.org/products/model-a-plus/), [Raspberry Pi Model B+](https://www.raspberrypi.org/products/model-b-plus/), [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/), [Raspberry Pi Zero](https://www.raspberrypi.org/products/pi-zero/), and [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) 需要micro-SD卡.
 
-##Troubleshooting
+##排除故障
 
-We recommend buying the Raspberry Pi SD card which is available [here](https://shop.pimoroni.com/products/noobs-8gb-sd-card), as well as from other retailers; this is an 8GB class 6 micro SD card (with a full-size SD adapter) that outperforms almost all other SD cards on the market and is a good value solution.
+我们建议购买[here](https://shop.pimoroni.com/products/noobs-8gb-sd-card), 它是一张8GB clas 6 的 microSD卡，并配备了一张全尺寸SD卡套，十分超值。
 
-If you are having trouble with corruption of your SD cards, make sure you follow these steps:
+如果你在使用SD卡中遇到任何的数据损坏问题，确保你遵循了以下步骤：
 
-1. Make sure you are using a genuine SD card. There are many cheap SD cards available which are actually smaller than advertised or which will not last very long.
-2. Make sure you are using a good quality power supply. You can check your power supply by measuring the voltage between TP1 and TP2 on the Raspberry Pi; if this drops below 4.75V when doing complex tasks then it is most likely unsuitable.
-3. Make sure you are using a good quality USB cable for the power supply. When using a high quality power supply, the TP1->TP2 voltage can drop below 4.75V. This is generally due to the resistance of the wires in the USB power cable; to save money, USB cables have as little copper in them as possible, and as much as 1V (or 1W) can be lost over the length of the cable.
-4. Make sure you are shutting your Raspberry Pi down properly before powering it off. Type `sudo halt` and wait for the Pi to signal it is ready to be powered off by flashing the activity LED.
-5. Finally, corruption has been observed if you are overclocking the Pi. This problem has been fixed previously, although the workaround used may mean that it can still happen. If after checking the steps above you are still having problems with corruption, please let us know.
+1. 请确保您使用的是正品SD卡。有很多廉价的SD卡，容量比广告宣称的小，并且寿命有限。
+2. 请确保你使用的是品质优良的电源。你可以检测树莓派上TP1和TP2之间的电压，如果高负荷情况下电压低于4.75V，那么这个电源是不合格的。
+3. 确保你使用了优质的USB线缆来供电。当使用了优质电源后，TP1->TP2之间的电压依然低于 4.75V。这有可能是线缆的质量导致；为了节省成本USB线可能使用小铜芯，有可能1V的电源损失在线缆上。
+4. 确保你在关闭电源之前已正确关闭树莓派。键入sudo halt来关机，一但关机完成LED等会闪烁，这时候你可以安全的关闭电源了。
+5. 最后，超频可能导致数据损坏。这个问题之前已经修复，虽然采用的解决方法意味着它仍然有可能发生。如果遵循上述步骤后仍然数据损坏问题，请告诉我们。
