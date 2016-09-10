@@ -33,9 +33,9 @@ Rasobian系统中一些可用软件的基本使用示例来帮助你入门
     - 使用一个USB摄像头而不是树莓派相机模块
 - [Kodi](kodi/README.md)
     - 在你的树莓派上安装多媒体中心的软件
-- [Playing audio](audio/README.md)
+- [播放音频](audio/README.md)
     - 在你的树莓派上播放音频
-- [Playing video](video/README.md)
+- [播放视频](video/README.md)
     - 在你的树莓派上播放视频
 - [示例代码](demos/README.md)
     - 一些示例来验证树莓派的性能
