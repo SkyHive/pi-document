@@ -1,21 +1,33 @@
 # More on Python
+# 更多关于Python
 
 ## Python 2 vs. Python 3
+## Python2对比Python3
 
 The short version: Python 2 is legacy, Python 3 is the present and future of the language.
+精简版本：Python2是老的版本，Python3是当前和将来的版本
 
 Python 2 was released in 2000, and Python 3 was released in 2008. Python 3 is recommended, but some libraries have not yet been ported to Python 3 which is why Python 2 is still present and widely used.
+Python2在2000年发布，Python3在2008年发布，推荐使用Python3。但是由于一些库还没有支持Python3，所以Python2依然被广泛使用。
 
 If you are familiar with Python 2 but not Python 3, here is a summary of the basic key differences:
+如果你熟悉Python2但不熟悉Python3，这里有两个版本的关键不同点的总结：
 
 - Print
     - In Python 2, `print` is a statement and did not require brackets, e.g. `print "Hello"`.
+    - 在Python2中，`print`是一个声明，不需要括号，比如：`print "Hello"`。
     - In Python 3, `print` is a function, so you pass in what you want to print as parameters, e.g. `print("Hello")` or `print("My age is", age)`.
+    - 在Python3中，`print`是一个函数，所以你需要将打印的内容当做参数传递给它，比如:`print("Hello")`或者`print("My age is",age)`。
     - Using brackets for `print` in Python 2 works fine, so it's common to see this used for compatibility. However printing multiple objects in the same `print` command works differently.
+    - Python2中`print`使用括号是可以的，因为是兼容的，但是，用一个`print`打印多个对象的将会出现困难。
     - In Python 3 this prints each one, space separated, and in Python 2 the collection of items is printed as a tuple, e.g. `("My age is", 15)`
+    - 对于`("My age is", 15)` Python3中打印每个值，中间用空格分割，在Python2中作为一个元组打印。
 -  Input / Raw input
+_  输入/行输入
     -  In Python 2, the function `raw_input` takes input from the user.
+    -  在Python2中，用户使用`raw_input`作为输入。
     -  In Python 3, the function is called `input`.
+    -  在Python3中，这个函数变成了`input`。
 - Integer division
     - In Python 2 `/` is used for exact integer division, always returning an integer. This means it returns the value of the number of times one number divides in to another whole, and ignores the remainder, e.g. `1 / 2` returns `0`, `2 / 2` returns `1` and `3 / 2` returns `1`.
     - In Python 3, `/` does 'true' division, returning a floating point number (decimal), e.g. `1 / 2` returns `0.5`.
