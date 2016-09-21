@@ -1,61 +1,61 @@
-# Terminal
+# 终端
 
-The terminal (or 'command-line') on a computer allows a user a great deal of control over their system (or in this case, Pi!). Users of Windows may already have come across `Command Prompt` or `Powershell` and Mac OS users may be familiar with `Terminal`. All of these tools allow a user to directly manipulate their system through the use of commands. These commands can be chained together and/or combined together into complex scripts (see the [linux usage page on scripting](../../linux/usage/scripting.md)) that can potentially complete tasks more efficiently than much larger traditional software packages.
+电脑上的终端(或者称为命令行)允许用户在很大的程度上控制我们的系统(这里就是我们的树莓派)。Windows用户可能接触过`Command Prompt`或者`Powershell`，Mac OS用户可能更加熟悉`Terminal`。所有的这些工具允许用户使用命令行的方式直接操控他们的系统。这些命令可能会链接在一起和/或组合在一起来形成脚本(查看 [Linux脚本使用](../../linux/usage/scripting.md)) 比传统的软件包更加有效地完成任务。
 
-## Starting LXTerminal
+## 开始LXTerminal
 
-On the Raspberry Pi (running Raspbian), the default terminal application is `LXTerminal`. This is known as a 'terminal emulator', this means that it emulates the old style video terminals (from before graphical user interfaces were developed) in a graphical environment. The application can be found on the Raspberry Pi desktop and when started will look something like this:
+在树莓派中(运行Raspbian系统)，默认的终端程序是`LXTerminal`,这是一个比较知名的终端模拟器，意思是它可以在图形化界面中模拟旧样式的视频终端(在图形化界面应用接口被开发出来以前)。这个应用程序在树莓派的桌面，启动后如下图所示：
 
 ![LXTerminal screenshot](images/lxterminal.png)
 
-You should be able to see the following prompt:
+你应该能够看到如下的提示：
 
 ```bash
 pi@raspberrypi ~ $
 ```
 
-This shows your username and the hostname of the Pi. Here the username is `pi` and the hostname is `raspberrypi`.
+这显示了你的树莓派用户名和域名，这里用户名是`pi`，域名是`raspberrypi`。
 
-Now, let's try running a command. Type `pwd` (present working directory) followed by the `Enter` key. This should display something like `/home/pi`.
+现在，让我们试着运行一条命令。输入`pwd`(当前工作的目录)，然后按下`Enter`键。
 
-## Navigating and browsing your Pi
+## 导航和浏览你的树莓派
 
-One of the key aspects of using a terminal is being able to navigate your file system. Firstly, run the following command: `ls -la`. You should see something similar to:
+使用终端的一个重要的方面就是显示你的文件系统，运行如下的命令:`ls -al`，你应该能看到类似下面的页面：
 
 ![ls result](images/lsresult.png)
 
-The `ls` command lists the contents of the directory that you are currently in (your present working directory). The `-la` component of the command is what's known as a 'flag'. Flags modify the command that's being run. In this case the `l` displays the contents of the directory in a list, showing data such as their sizes and when they were last edited, and the `a` displays all files, including those beginning with a `.`, known as 'dotfiles'. Dotfiles usually act as configuration files for software and as they are written in text, they can be modified by simply editing them.
+`ls`命令列举了你当前目录小的所有内容。`-al`是命令的一个标签的一部分。标志修改正在运行的命令。`l`是代表展示当前目录的列表，显示文件的大小以及最后修改时间。`a`显示所有的文件，包括以`.`开头的隐藏文件。'点'文件经常作为一个软件的配置，他们是以文本文档来写的，他们能够很容易被编辑。
 
-In order to navigate to other directories the change directory command, `cd`, can be used. You can specify the directory that you want to go to by either the 'absolute' or the 'relative' path. So if you wanted to navigate to the `python_games` directory, you could either do `cd /home/pi/python_games` or just `cd python_games` (if you are currently in `/home/pi`). There are some special cases that may be useful: `~` acts as an alias for your home directory, so `~/python_games` is the same as `/home/pi/python_games`; `.` and `..` are aliases for the current directory and the parent directory respectively, e.g. if you were in `/home/pi/python_games`, `cd ..` would take you to `/home/pi`.
+为了跳转到其他的目录，可以使用'cd'命令。你可以指定绝对路径或者相对路径。如果你想导航到 `python_games`目录，你一个编辑`cd /home/pi/python_games` 或者仅仅`cd python_games`(如果当前在`/home/pi`目录)然后执行。有一些特殊的有用的标记：`~`是你自己根目录的别名，所以`~/python_games`等同于`/home/pi/python_games`。`.`和`..`分别表示当前目录和上层目录。如果你在`/home/pi/python_games`,`cd ..`将会带你到`/home/pi`目录。
 
-## History and auto-complete
+## 历史消息和自动补全
 
-Rather than type every command, the terminal allows you to scroll through previous commands that you've run by pressing the `up` or `down` keys on your keyboard. If you are writing the name of a file or directory as part of a command then pressing `tab` will attempt to auto-complete the name of what you are typing. For example, if you have a file in a directory called `aLongFileName` then pressing tab after typing `a` will allow you to choose from all file and directory names beginning with `a` in the current directory, allowing you to choose `aLongFileName`.
+相比于输入每条命令，终端可以通过键盘上下方向键来跳转到之前的命令。如果你在命令中输入一个文件或目录名的一部分，敲击键盘`tab`键将自动补全你想要输入的。比如在你的目录中有一个文件叫做`aLongFileName`,在输入`a`之后敲击`tab`,将会在当前目录中所有的文件和目录名匹配以`a`开头的，然后你可以选择`aLongFileName`
 
 ## Sudo
 
-Some commands that make permanent changes to the state of your system require you to have root privileges to run. The command `sudo` temporarily gives your account (if you're not already logged in as root) the ability to run these commands, provided your user name is in a list of users ('sudoers'). When you append `sudo` to the start of a command and press `enter` you will be asked for your password, if that is entered correctly then the command you want to run will be run using root privileges. Be careful though, some commands that require `sudo` to run can irreparably damage your system so be careful!
+有些命令会永久地改变系统的状态，所以需要系统的管理权限，`sudo`提供这样的能力(如果你没有以`root`帐号来登录)来运行你的命令，前提是你的用户名在(`sudoers`)组中。当你在命令的前面加了`sudo`然后`enter`，你将会被要求输入密码，当密码正确的时候，你的命令就是以root权限来运行的。注意：有些需要`sudo`的命令可能会给你的系统造成无法挽回的损害。
 
-Further information on `sudo` and the root user can be found on the [linux root page](../../linux/usage/root.md).
+更多关于`sudo`以及root用户的信息参考[linux root page](../../linux/usage/root.md)。
 
-## Installing software through apt-get
+## 通过apt-get安装软件
 
-Rather than using the Pi Store to download new software you can use the command `apt-get`, this is the 'package manager' that is included with any Debian based Linux distributions (including Raspbian). It allows you to install and manage new software packages on your Pi. In order to install a new package you would type `sudo apt-get install <package-name>` (where `<package-name>` is the package that you want to install). Running `sudo apt-get update` updates a list of software packages that are available on your system. If a new version of a package is available then `sudo apt-get upgrade` will update any old packages to the new version. Finally, `sudo apt-get remove <package-name>` removes or uninstalls a package from your system.
+除了在树莓派上商店下载新的软件，你也可以使用 `apt-get`命令。这是一个软件包管理工具，包含在Debian发行版(包括Raspbian)。它允许你在树莓派上安装和管理新的软件。为了安装一个新的安装包你可能会输入`sudo apt-get install <package-name>` `<package-name>`是你想安装的软件包的名字。运行`sudo apt-get update`将会更新你系统上可用的软件列表。如果有新的版本可用的时候，你可以使用`sudo apt-get upgrade`来将你的就的安装包升级到新的版本。最后`sudo apt-get remove <package-name>`是从你的系统卸载或者移除一个软件包。
 
-More information about this can be found in the [linux usage section on apt](../../linux/software/apt.md).
+更多关于这类信息可以参考[linux usage section on apt](../../linux/software/apt.md)
 
-## Other useful commands
+## 其他有用的命令
 
-There are a few other commands that you may find useful, these are listed below:
+有一些其他比较常用的命令列举如下：
 
-- `cp` makes a copy of a file and places it at the specified location (essentially doing a 'copy-paste'), for example - `cp file_a /home/other_user/` would copy the file `file_a` from your home directory to that of the user `other_user` (assuming you have permission to copy it there). Note that if the target is a folder, the filename will remain the same, but if the target is a filename, it will give the file the new name.
-- `mv` moves a file and places it at the specified location (so where `cp` performs a 'copy-paste', `mv` performs a 'cut-paste'). The usage is similar to `cp`, so `mv file_a /home/other_user/` would move the file `file_a` from your home directory to that of the specified user. `mv` is also used to rename a file, i.e. move it to a new location, e.g. `mv hello.txt story.txt`.
-- `rm` removes the specified file (or directory when used with `-r`). **Warning:** Files deleted in this way are generally not restorable.
-- `mkdir`: This makes a new directory, e.g. `mkdir new_dir` would create the directory `new_dir` in the present working directory.
-- `cat` lists the contents of files, e.g. `cat some_file` will display the contents of `some_file`.
+- `cp` 复制一个文件放入到指定的位置(基本上就是粘贴复制)，比如：`cp file_a /home/other_user/`将会吧`file_a`从你的目录复制到`other_user`(将设你有权复制)目录下。注意：如果目标是一个目录，文件名依然是相同的，但是如果目标是一个文件，将会给文件新的名字。
+- `mv` 将目录移动到指定的位置(cp意思是`copy-paste`,`mv`是`cut-paste`)。用法跟`cp`类似，`mv file_a /home/other_user/`就是将文件`file_a`从你的目录中移动到其他目录.`mv`还可以重命名一个文件，将它移动到新的指定的位置。
+- `rm` 删除指定的文件(如果是目录要加`-r`),这删除文件的方式将不会保存的。
+- `mkdir`: 创建一个新的目录，`mkdir new_dir`在当前目录将会创建一个目录名`new_dir`的目录
+_ `cat` 列举当前文件的内容，`cat some_file`将会显示`some_file. _ cat`的内容。
 
-Other commands you may find useful can be found in the [commands page](../../linux/usage/commands.md).
+其他的你可能发现[commands page](../../linux/usage/commands.md)会有很多用处。
 
-## Finding out about a command
+## 找到一个命令的说明
 
-To find out more information about a particular command then you can run the `man` followed by the command you want to know more about (e.g. `man ls`). The man-page (or manual page) for that command will be displayed, including information about the flags for that program and what effect they have. Some man-pages will give example usage.
+为了找到一个命令更多的信息，你可以使用`man`命令就可以知道更多(比如：`man ls`)。关于这条命令的说明就会显示，包括命令参数的说明和功能，以及使用示例。
