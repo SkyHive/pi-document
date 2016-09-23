@@ -1,7 +1,7 @@
-# Minecraft Pi
+# 我的世界
 
-Minecraft is a popular sandbox open world building game. A free version of Minecraft is available for the Raspberry Pi; it also comes with a programming interface. This means you can write commands and scripts in Python code to build things in the game automatically. It's a great way to learn Python!
+我的世界是一款非常流行的运行在沙盒中建造世界的游戏。树莓派提供了一个免费的版本。也提供了可编程的接口。意味着你可以通过命令或者Python脚本来自动在游戏中建造东西。是一个非常好的学习Python的平台
 
 ![Minecraft Pi banner](images/minecraft-pi-banner.png)
 
-See the [Getting Started with Minecraft Pi](https://www.raspberrypi.org/learning/getting-started-with-minecraft-pi/) learning resource for instructions on using Minecraft Pi.
+浏览 [开始我的世界](https://www.raspberrypi.org/learning/getting-started-with-minecraft-pi/) 学习更多的关于我的世界。
