@@ -1,12 +1,17 @@
 # Raspberry Pi Display
+# 树莓派显示
 
 ## Introduction
+## 介绍
 
 The Raspberry Pi display is an LCD display which connects to the Raspberry Pi through the DSI connector, it allows the use of both the HDMI and LCD displays at the same time in some situations (this implies requiring software support)
+树莓派可以通过DSI接口将画面显示到LCD屏幕，在一些情况下（需要软件的支持）可以允许用户同时通过HDMI和LCD屏幕。
 
 ## Board Support
+## 板载支持
 
 The DSI display is designed to work with Raspberry Pi models that have mounting holes in a HAT footprint. Model A/B boards are supported, but require additional mounting hardware to fit the HAT-dimensioned stand-offs on the display PCB.
+DSI是专门为树莓派设计的显示模块，能够显示在一个挂载了HAT模式的。Model A/B板子是支持的，但是需要添加一个硬件PCB板来适配。
 
 ### Attaching to Model A/B boards
 
