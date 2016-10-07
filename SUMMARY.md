@@ -1,7 +1,5 @@
-# Summary 
 
-* [介绍](introduction.md)
-* [目录](README.md)
+* [介绍](README.md)
 * [设置/快速入门](setup/README.md) 
     * [连接显示器](setup/monitor-connection.md)
 * [安装](installation/README.md) 
