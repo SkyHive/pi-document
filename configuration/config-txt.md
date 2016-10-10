@@ -1,22 +1,31 @@
 # config.txt
 
 The Raspberry Pi doesn't have a [BIOS](https://en.wikipedia.org/wiki/BIOS) like you'd find on a conventional PC. This is because it is an embedded platform. The various system configuration parameters, which would traditionally be edited and stored using a BIOS, are stored in an optional text file named `config.txt`. This is read by the GPU before the ARM CPU and Linux are initialised; it must therefore be located on the first (boot) partition of your SD card, alongside `bootcode.bin` and `start.elf`. This file is normally accessible as `/boot/config.txt` from Linux and must be edited as [root](../linux/usage/root.md), but from Windows or OS X it is seen as a file in the only accessible part of the card. If you need to apply some of the config settings below, but you don't have a `config.txt` on your boot partition yet, then simply create it as a new text file.
+树莓派没有跟普通电脑一样的[BIOS](https://en.wikipedia.org/wiki/BIOS)，这是因为它是一个嵌入式平台。普通电脑上使用BIOS来存储可编辑的系统配置变量，树莓派保存在一个名为config.txt的文件中。在Linux系统和ARM CPU初始化之前被GPU读取。因此它必须位于SD卡的第一分区(boot)。跟bootcode.bin文件和start.elf文件一起。在Linux系统中可正常通过/boot/config.txt访问，必须以root权限编辑，但是在windows系统或者Max OS中,它是SD卡唯一可访问的分区文件。如果你需要下面的一些配置文件，但是没有在boot分区中找到config.txt文件，你可以创建一个文本文件。
 
 Any changes will only take effect after you've rebooted your Raspberry Pi. After Linux has booted, you can get the current active settings with the following commands:
+所以的改变只会重启树莓派生效。在Linux启动后，你可以使用下面的命令获取当前已激活的设置：
 
 `vcgencmd get_config <config>` - displays a specific config value, e.g. `vcgencmd get_config arm_freq`.
+`vcgencmd get_config <config>` - 显示具体的配置值 比如：`vcgencmd get_config arm_freq`。
 
 `vcgencmd get_config int` - lists all the integer config options that are set (non-zero).
+`vcgencmd get_config int` - 列举所有的整数配置选项（非零）
 
 `vcgencmd get_config str` - lists all the string config options that are set (non-null).
+`vcgencmd get_config str` -列举所有的字符串配置选项（非空）
 
 Note that there are a few config settings which can't be retrieved using `vcgencmd`.
+注意有少数的配置不能通过`vcgencmd`查询。
 
 ## File format
+## 文件格式
 
 As `config.txt` is read by the early-stage boot firmware it has a very simple file format. The format is a single `property=value` statement on each line, where `value` is either an integer or a string. Comments may be added, or existing config values may be commented out and disabled, by starting a line with the `#` character.
+作为最先被读取的启动固件，它的文件格式非常简单。每行以键值对的形式，值是字符串或者整数。可能会增加注释，或者注释掉以存在的配置，以#号开头的是注释。
 
 Here is an example file:
+这里是示例文件：
 
 ```
 # Force the monitor to HDMI mode so that sound will be sent over HDMI cable
@@ -33,30 +42,37 @@ overscan_bottom=10
 ```
 
 ## Memory
+## 内存
 
 ### gpu_mem
 
 GPU memory in megabytes. This sets the memory split between the CPU and GPU; the CPU gets the remaining memory. Minimum value is `16`; maximum value is `192`, `448`, or `944`, depending on whether you're using a 256M, 512MB, or 1024MB Pi. The default value is `64`.
+GPU内存是MB为单位。CPU和GPU共同分割所有内存。CPU使用剩下的内存。最小的内存是16，最大192，448或者944取决于你是用256M,512M还是1024MB内存的树莓派，默认值是64。
 
 Setting `gpu_mem` to low values may automatically disable certain firmware features, as there are some things the GPU simply can't do with too little memory. So if a certain feature you're trying to use isn't working, try setting a larger GPU memory split.
+设置较低的`gpu_mem`会自动禁用一些固件功能，在太小的内存下，GPU不能运行这些功能。所以如果有一些你尝试使用的功能不生效，使者将GPU内存设置大一些。
 
 Using `gpu_mem_256`, `gpu_mem_512`, and `gpu_mem_1024` allows you to swap the same SD card between 256MB, 512MB, and 1024MB Pis without having to edit `config.txt` each time:
-
-### gpu_mem_256
+使用`gpu_mem_256`, `gpu_mem_512`和 `gpu_mem_1024`允许你在256MB, 512MB和1024MB在同一张SD卡交换内存，而不必修改‵config.txt`文件。
+## gpu_mem_256
 
 GPU memory in megabytes for the 256MB Raspberry Pi (ignored if memory size is not 256MB). This overrides `gpu_mem`. The maximum value is `192` and the default is not set.
+256MB内存的树莓派的GPU内存(如果不是256MB将会被忽略)。覆盖了`gpu_mem`，最大值是192，没有默认值。
 
 ### gpu_mem_512
 
 GPU memory in megabytes for the 512MB Raspberry Pi (ignored if memory size is not 512MB). This overrides `gpu_mem`. The maximum value is `448` and the default is not set.
+512MB内存的树莓派的GPU内存(如果不是512MB将会被忽略)。覆盖了`gpu_mem`，最大值是448，没有默认值。
 
 ### gpu_mem_1024
 
 GPU memory in megabytes for the 1024MB Raspberry Pi 2 (ignored if memory size is not 1024MB). This overrides `gpu_mem`. The maximum value is `944` and the default is not set.
+1024MB内存的树莓派的GPU内存(如果不是1024MB将会被忽略)。覆盖了`gpu_mem`，最大值是944，没有默认值。
 
 ### disable_l2cache
 
 Setting this to `1` disables the CPU's access to the GPU's L2 cache; requires a corresponding L2 disabled kernel. Default value is `0`.
+设置成`1`表示禁止CPU连到GPU的L2缓存，需要内核禁止L2,默认是0。
 
 ### disable_pvt
 
